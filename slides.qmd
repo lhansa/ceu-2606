@@ -10,7 +10,7 @@ format: revealjs
 - Project focus: local, file-based data analysis workflow
 - Two use cases:
   - Monitoring data over time
-  - Recodifying metrics with correlation and clustering support
+  - Recoding metrics with correlation and clustering support
 
 ## Use case 1: Monitoring data
 
