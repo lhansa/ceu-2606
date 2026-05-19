@@ -21,3 +21,5 @@ def plot_dendrogram(linkage_matrix, labels=None) -> None:
     plt.title("Metrics dendrogram")
     plt.xlabel("Metric")
     plt.ylabel("Distance")
+    plt.tight_layout()
+    plt.show()
