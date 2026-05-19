@@ -20,3 +20,4 @@ def plot_time_series(data: pd.DataFrame, date_col: str, value_col: str) -> None:
     plt.title("Monitoring time series")
     plt.xlabel(date_col)
     plt.ylabel(value_col)
+    plt.show()

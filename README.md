@@ -13,7 +13,7 @@ Quarto slide project for CEU sessions in June 2026.
 ## Planned use cases
 
 1. Monitoring data (time series plotting)
-2. Recodifying metrics (correlation + hierarchical clustering/dendrogram)
+2. Recoding metrics (correlation + hierarchical clustering/dendrogram)
 
 ## Local setup
 

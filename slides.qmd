@@ -1,5 +1,5 @@
 ---
-title: "Monitoring Data and Recodifying Metrics"
+title: "Monitoring Data and Recoding Metrics"
 subtitle: "CEU Session - June 2026"
 author: ""
 format: revealjs
@@ -29,7 +29,7 @@ plot_time_series(monitoring_df, date_col="date", value_col="value")
 plt.tight_layout()
 ```
 
-## Use case 2: Recodifying metrics
+## Use case 2: Recoding metrics
 
 ```{python}
 #| eval: false
