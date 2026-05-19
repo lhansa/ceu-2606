@@ -1,18 +1,26 @@
 ---
-title: "Monitoring Data and Recoding Metrics"
-subtitle: "CEU Session - June 2026"
-author: ""
+title: "2 casos de uso"
+subtitle: "Máster en análisis y divulgación de datos"
+author: "Leonardo Hansa"
+date: "2026-06-01"
 format: revealjs
 ---
 
-## Introduction
+# Bienvenida
 
-- Project focus: local, file-based data analysis workflow
-- Two use cases:
-  - Monitoring data over time
-  - Recoding metrics with correlation and clustering support
+## Asignatura
 
-## Use case 1: Monitoring data
+- 2 casos de uso
+- Implementación por equipos
+- Presentación de casos
+
+## Evaluación 
+
+- Solución presentada: 40% (igual para cada miembro del equipo)
+- Exposición: 40% (individual)
+- Pregunta a otro equipo: 20% (individual)
+
+# Caso 1: monitorización de datos
 
 ```{python}
 #| eval: false
@@ -29,7 +37,21 @@ plot_time_series(monitoring_df, date_col="date", value_col="value")
 plt.tight_layout()
 ```
 
-## Use case 2: Recoding metrics
+# Caso 2: agregación de métricas
+
+## Problema de partida
+
+Gráfico con varias métricas
+
+## Tenemos demasiadas métricas
+
+- Cómo las agregamos
+
+## Con qué tenemos que lidiar
+
+- Cómo eliminamos el ruido de las métricas
+- Con qué criterios 
+
 
 ```{python}
 #| eval: false
