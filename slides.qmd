@@ -1,0 +1,52 @@
+---
+title: "Monitoring Data and Recoding Metrics"
+subtitle: "CEU Session - June 2026"
+author: ""
+format: revealjs
+---
+
+## Introduction
+
+- Project focus: local, file-based data analysis workflow
+- Two use cases:
+  - Monitoring data over time
+  - Recoding metrics with correlation and clustering support
+
+## Use case 1: Monitoring data
+
+```{python}
+#| eval: false
+from pathlib import Path
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from src.monitoring import load_monitoring_data, plot_time_series
+
+raw_file = Path("data/raw/monitoring_data.xlsx")
+monitoring_df = load_monitoring_data(raw_file)
+plot_time_series(monitoring_df, date_col="date", value_col="value")
+plt.tight_layout()
+```
+
+## Use case 2: Recoding metrics
+
+```{python}
+#| eval: false
+from pathlib import Path
+
+import pandas as pd
+
+from src.metrics_recoding import (
+    correlation_matrix,
+    hierarchical_linkage,
+    plot_dendrogram,
+)
+
+metrics_file = Path("data/raw/metrics_data.xlsx")
+metrics_df = pd.read_excel(metrics_file)
+
+corr = correlation_matrix(metrics_df)
+linkage_matrix = hierarchical_linkage(metrics_df)
+plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
+```
