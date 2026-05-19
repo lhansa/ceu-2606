@@ -1,0 +1,12 @@
+project:
+  type: default
+
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
