@@ -3,8 +3,26 @@ title: "2 casos de uso"
 subtitle: "Máster en análisis y divulgación de datos"
 author: "Leonardo Hansa"
 date: "2026-06-01"
-format: revealjs
+lang: es
+execute:
+    echo: false
+    eval: true
+    warning: false
+    message: false
+format:
+    revealjs:
+        slide-number: c/t
+        incremental: false
 ---
+
+```{python}
+#| echo: false
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+```
 
 # Bienvenida
 
@@ -101,37 +119,75 @@ Dos partes:
 - El conjunto de nuevos datos solo lo tendréis disponible al final
 - El objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?
 
-
-```{python}
-#| eval: false
-from pathlib import Path
-
-import pandas as pd
-import matplotlib.pyplot as plt
-
-from src.monitoring import load_monitoring_data, plot_time_series
-
-raw_file = Path("data/raw/monitoring_data.xlsx")
-monitoring_df = load_monitoring_data(raw_file)
-plot_time_series(monitoring_df, date_col="date", value_col="value")
-plt.tight_layout()
-```
-
 # Caso 2: agregación de métricas
 
 ## Problema de partida
 
-Gráfico con varias métricas
+```{python}
+#| echo: false
+score_file = Path("data/processed/daily-score.csv")
+score_df = pd.read_csv(score_file)
 
-## Tenemos demasiadas métricas
+date_col = score_df.columns[0]
+score_df[date_col] = pd.to_datetime(score_df[date_col], errors="coerce")
 
-- Cómo las agregamos
+numeric_cols = [
+    col
+    for col in score_df.columns
+    if col != date_col and pd.api.types.is_numeric_dtype(score_df[col])
+]
 
-## Con qué tenemos que lidiar
+sample_size = min(6, len(numeric_cols))
+sampled_cols = pd.Series(numeric_cols).sample(n=sample_size, random_state=42).tolist()
 
-- Cómo eliminamos el ruido de las métricas
-- Con qué criterios 
+fig, axes = plt.subplots(2, 3, figsize=(13, 7), sharex=True)
+axes = axes.flatten()
 
+for i, col in enumerate(sampled_cols):
+    axes[i].plot(score_df[date_col], score_df[col], linewidth=1.5)
+    axes[i].set_title(col.replace("_", " ").title(), fontsize=10)
+    axes[i].tick_params(axis="x", labelrotation=45)
+
+for i in range(sample_size, len(axes)):
+    axes[i].axis("off")
+
+fig.suptitle("6 series temporales aleatorias (daily-score)", fontsize=14)
+fig.tight_layout()
+plt.show()
+```
+
+## Tenemos demasiadas métricas. El objetivo es agregarlas
+
+## Hay dos fases principales
+
+1. Procesado 
+2. Agregación
+
+## 1. Procesado. De diario a semanal
+
+**Tarea.** Pasa el dato diario a semanal
+
+## 1. Procesado. Suaviza series temporales
+
+**Tarea.** 
+
+- Suaviza las series temporales para eliminar picos que no aportan información
+- Decide el método y explica por qué lo has elegido
+
+## 2. Agregación. Correlación entre métricas
+
+**Tarea.** 
+
+- Calcula la correlación de cada métrica con todas las demás
+- Explica por qué hacemos esto
+
+## 2. Agregación. Agrupación jerárquica
+
+**Tarea.** 
+
+- Implementa los clusters
+- Decide con cuántos te quedas y explóralos
+- Calcula el centroide. Cada centroide es la agregación de las métricas que representa
 
 ```{python}
 #| eval: false
@@ -153,16 +209,58 @@ linkage_matrix = hierarchical_linkage(metrics_df)
 plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
 ```
 
+# Teoría
 
-# Desarrollo de los casos
+## Idea general de clustering
 
-## Separación por equipos
+```{python}
 
-- Parejas
 
-## Reparto de casos
+rng = np.random.default_rng(7)
+centers = [(-3, -3), (0, 3), (4, -1)]
+n = 80
 
-- Cada equipo hace un solo caso
-- Los tribunales serán equipos alternos
+points = np.vstack([
+    rng.multivariate_normal(center, [[1, 0], [0, 1]], n)
+    for center in centers
+])
+labels = np.repeat([0, 1, 2], n)
+```
 
-El tribunal no habrá trabajado en el caso que evalúa
+```{python}
+colors = ["#e07b39", "#4a90d9", "#6abf69"]
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+ax1.scatter(points[:, 0], points[:, 1], color="black", alpha=0.6, s=30)
+ax1.set_title("Datos sin etiquetar")
+ax1.axis("off")
+for spine in ax1.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1.5)
+    spine.set_edgecolor("#cccccc")
+
+for k, color in enumerate(colors):
+    mask = labels == k
+    ax2.scatter(points[mask, 0], points[mask, 1], color=color, alpha=0.7, s=30, label=f"Cluster {k + 1}")
+ax2.set_title("Coloreados por cluster")
+ax2.legend()
+ax2.axis("off")
+for spine in ax2.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1.5)
+    spine.set_edgecolor("#cccccc")
+
+plt.tight_layout()
+plt.show()
+```
+
+## Hay dos filosofías de clustering: jerárquico y particional
+
+## Clustering no jerárquico: k-means
+
+<!-- TODO: link a página interactiva kmeans -->
+
+## Clustering jerárquico: dendrograma
+
+<!-- TODO. visualzación jerárquico -->

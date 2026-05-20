@@ -7,3 +7,6 @@ description: These instructions should be loaded for all tasks
 - Students will implement two use cases, guided by me.
 - Slides will be used during the first lectures as introductions. 
 - Scripts will be used for preparing material, but won't be shared with students.
+- Slides will have short sentences, and just two or three bullet points.
+- Brand color is #800080
+- On slides.qmd all python packages must be loaded on first chunk.
