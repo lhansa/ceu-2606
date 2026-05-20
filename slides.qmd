@@ -14,13 +14,93 @@ format: revealjs
 - Implementación por equipos
 - Presentación de casos
 
-## Evaluación 
+# Evaluación 
+
+## Elementos
 
 - Solución presentada: 40% (igual para cada miembro del equipo)
 - Exposición: 40% (individual)
-- Pregunta a otro equipo: 20% (individual)
+- Tribunal: 20% (individual)
+
+## Solución presentada
+
+- 40%
+- Misma nota para cada miembro
+- Se valorará:
+  - calidad técnica
+  - validez de la solución
+
+## Exposición
+
+- 40%
+- Individual
+- Se valorará:
+    - claridad, 
+    - storytelling
+    - defensa frente a las preguntas
+
+# Sesiones
+
+## Primera sesión y quizá segunda
+
+- Presentación de los casos
+
+## Sesiones centrales
+
+- Trabajo en equipo para resolver los casos
+
+## Última sesión
+
+- Exposición de los casos
+
+## Material extra
+
+<!-- pantallazo leonardohansa.com -->
+
+https:://leonardohansa.com
+
+## Tribunal (pregunta a otro equipo)
+
+- 20%
+- Individual
+- Se valorará: 
+    - La pertinencia
+    - La originalidad
+    - La capacidad de generar debate
+
 
 # Caso 1: monitorización de datos
+
+## Problema de partida
+
+<!-- TODO: pantallazo de tabla de datos -->
+
+## Problema de partida
+
+- Datos para un análisis a fecha de hoy
+- Tiempo después llegan nuevos datos para actualizar el análisis
+
+**Objetivo.** Validar que los nuevos datos son coherentes con los anteriores.
+
+## Tarea
+
+Implementación de reglas para validar si los nuevos datos se parecen a los anteriores e identificar rasgos en los que no.
+
+Dos partes: 
+- Listado de reglas (ideas abstractas)
+- Implementación con código
+
+## Tarea
+
+- El equipo construirá un código para validar los nuevos datos. 
+- Este código indicará las diferencias significativas de los nuevos datos. 
+    - Generando un fichero, mostrando por pantalla, lo que se decida.
+
+## Comentarios
+
+- El conjunto de nuevos datos solo lo tendréis disponible al final
+- El objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?
+
 
 ```{python}
 #| eval: false
@@ -72,3 +152,17 @@ corr = correlation_matrix(metrics_df)
 linkage_matrix = hierarchical_linkage(metrics_df)
 plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
 ```
+
+
+# Desarrollo de los casos
+
+## Separación por equipos
+
+- Parejas
+
+## Reparto de casos
+
+- Cada equipo hace un solo caso
+- Los tribunales serán equipos alternos
+
+El tribunal no habrá trabajado en el caso que evalúa
