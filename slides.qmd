@@ -119,7 +119,7 @@ Dos partes:
 - El conjunto de nuevos datos solo lo tendréis disponible al final
 - El objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?
 
-# Caso 2: agregación de métricas
+# Caso. Agregación de métricas
 
 ## Problema de partida
 
@@ -156,38 +156,120 @@ fig.tight_layout()
 plt.show()
 ```
 
-## Tenemos demasiadas métricas. El objetivo es agregarlas
+## Tenemos demasiadas métricas. El objetivo es unificarlas
 
-## Hay dos fases principales
+## Fases
 
-1. Procesado 
-2. Agregación
+1. Paso de diario a semanal
+2. Suavizado de las series temporales
+3. Cálculo de la correlación entre las métricas
+4. Clustering jerárquico para agrupar las métricas
+5. Análisis de los clusters y cálculo de los centroides
 
-## 1. Procesado. De diario a semanal
+## 1. Paso de diario a semanal
 
-**Tarea.** Pasa el dato diario a semanal
+**Tarea.** Pasa el dato diario a semanal. 
 
-## 1. Procesado. Suaviza series temporales
+## Contexto. Cómo se calculan las métricas
+
+| Fecha      | Calidad | Calidad positiva | Calidad negativa | Calidad volumen |
+|------------|---------|------------------|------------------|-----------------|
+| 04/01/2016 | -13.23  | 18.43            | 91.50            | 552.46          |
+| 05/01/2016 | -13.02  | 17.54            | 89.67            | 554.07          |
+| 06/01/2016 | -14.85  | 16.54            | 100.22           | 563.66          |
+| 07/01/2016 | -14.57  | 17.97            | 99.48            | 559.62          |
+| 08/01/2016 | -15.15  | 21.26            | 109.15           | 580.06          |
+| 09/01/2016 | -17.35  | 18.94            | 121.47           | 590.93          |
+| 10/01/2016 | -18.18  | 16.04            | 123.78           | 592.57          |
+
+
+## Contexto. Cómo se calculan las métricas
+
+$$
+\mbox{calidad}_i = \frac{\mbox{calidad positiva}_i - \mbox{calidad negativa}_i}{\mbox{calidad volumen}_i}\times 100
+$$
+
+en la fecha $i$.
+
+## ¿Cómo se agrega a semanal?
+
+
+## 2. Suavizado de las series temporales
+
+```{python}
+from scipy.signal import savgol_filter
+
+weekly_file = Path("data/raw/YouGov Combined Jan 2015 - Mar 2020.xlsx")
+weekly_df = pd.read_excel(weekly_file, sheet_name="YouGov Weekly")
+
+date_col = weekly_df.columns[0]
+weekly_df[date_col] = pd.to_datetime(weekly_df[date_col], errors="coerce")
+
+numeric_cols = [
+    col
+    for col in weekly_df.columns
+    if col != date_col and pd.api.types.is_numeric_dtype(weekly_df[col])
+]
+
+chosen_col = pd.Series(numeric_cols).sample(n=1, random_state=42).iloc[0]
+
+series = weekly_df[[date_col, chosen_col]].dropna().set_index(date_col)[chosen_col]
+
+smoothed_soft = savgol_filter(series.values, window_length=53, polyorder=3)
+smoothed_responsive = savgol_filter(series.values, window_length=21, polyorder=3)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5), sharey=True)
+
+ax1.plot(series.index, series.values, linewidth=1, alpha=0.5, label="Original")
+ax1.plot(series.index, smoothed_soft, linewidth=2.5, label="Suavizado")
+ax1.set_title("Poco sensible", fontsize=11)
+ax1.set_xlabel("Fecha")
+ax1.legend()
+ax1.tick_params(axis="x", labelrotation=45)
+
+ax2.plot(series.index, series.values, linewidth=1, alpha=0.5, label="Original")
+ax2.plot(series.index, smoothed_responsive, linewidth=2.5, label="Suavizado")
+ax2.set_title("Más sensible", fontsize=11)
+ax2.set_xlabel("Fecha")
+ax2.legend()
+ax2.tick_params(axis="x", labelrotation=45)
+
+fig.suptitle(chosen_col.replace("_", " ").title(), fontsize=13)
+fig.tight_layout()
+plt.show()
+```
+
+
+## 2. Suavizado de las series temporales
 
 **Tarea.** 
 
 - Suaviza las series temporales para eliminar picos que no aportan información
 - Decide el método y explica por qué lo has elegido
 
-## 2. Agregación. Correlación entre métricas
+## 3. Cálculo de la correlación entre las métricas
+
+|            | Buzz  | Quality | Impression | Value |
+|------------|-------|---------|------------|-------|
+| Buzz       | 1.00  | 0.73    | 0.85       | -0.12 |
+| Quality    | 0.73  | 1.00    | 0.61       | 0.34  |
+| Impression | 0.85  | 0.61    | 1.00       | -0.08 |
+| Value      | -0.12 | 0.34    | -0.08      | 1.00  |
+
+
+## 3. Cálculo de la correlación entre las métricas
 
 **Tarea.** 
 
 - Calcula la correlación de cada métrica con todas las demás
 - Explica por qué hacemos esto
 
-## 2. Agregación. Agrupación jerárquica
+## 4. Clustering jerárquico para agrupar las métricas
 
 **Tarea.** 
 
 - Implementa los clusters
 - Decide con cuántos te quedas y explóralos
-- Calcula el centroide. Cada centroide es la agregación de las métricas que representa
 
 ```{python}
 #| eval: false
@@ -208,6 +290,13 @@ corr = correlation_matrix(metrics_df)
 linkage_matrix = hierarchical_linkage(metrics_df)
 plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
 ```
+
+## 5. Análisis de los clusters y cálculo de los centroides
+
+**Tarea.** 
+- Calcula el centroide. Cada centroide es la agregación de las métricas que representa
+- Analiza los centroides. ¿Qué representan? ¿Qué información aportan?
+
 
 # Teoría
 
@@ -264,3 +353,35 @@ plt.show()
 ## Clustering jerárquico: dendrograma
 
 <!-- TODO. visualzación jerárquico -->
+
+
+# Tarea
+
+## Metodología
+
+- Parejas
+- Trabajáis el caso
+- Presentación de 20 minutos:
+    + **12 de junio** ó **10 de julio**
+
+## Evaluación
+
+- Solución presentada: 40% (igual para cada miembro del equipo)
+- Exposición: 40% (individual)
+- Tribunal: 20% (individual)
+
+## Comentarios
+
+- El tribunal será otra pareja
+- Cada miembro hará una pregunta
+- Se valorará (muy) positivamente que la pregunta genere debates
+
+## Resumen de la tarea
+
+1. Paso de diario a semanal de los datos
+2. Suavizado de las series temporales
+3. Cálculo de la correlación entre las métricas
+4. Clustering jerárquico para agrupar las métricas
+5. Análisis de los clusters y cálculo de los centroides
+6. Preparación de la presentación para explicar el proceso y los resultados obtenidos
+7. Como miembro del tribunal, preparación de pregunta
