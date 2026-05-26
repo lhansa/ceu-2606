@@ -1,9 +1,9 @@
 ---
-title: "La IA te hará el trabajo, pero tú tendrás que defenderlo"
+title: "La IA hará tu trabajo, pero tú tendrás que defenderlo"
 subtitle: "2 casos de uso no tanto para hacer, sino para defender"
 affiliation: "Máster en Análisis y divulgación de datos"
 author: "Leonardo Hansa"
-date: "2026-06-01"
+date: "2026-06-05"
 date-format: "D/M/YYYY"
 lang: es
 execute:
@@ -17,7 +17,7 @@ format:
       - simple
       - custom.scss
     logo: img/favicon.png
-    transition: slide
+    transition: none
     incremental: false
 ---
 
@@ -30,13 +30,11 @@ import pandas as pd
 import numpy as np
 ```
 
-# Bienvenida
-
-## ¿Cuál es la situación actual en análisis de datos?
+# ¿Cuál es la situación actual en análisis de datos?
 
 ## La IA está haciendo cada vez más y más trabajo
 
-## Y quién es el responsable de ese trabajo
+## ¿Pero quién es el responsable de ese trabajo?
 
 ## Tú
 
@@ -48,9 +46,9 @@ import numpy as np
 - Explicar tu trabajo
 - Defender tu trabajo
 
-# En esta asignatura practicarás eso
+# En este módulo practicarás eso
 
-## Asignatura
+## Ingredientes del módulo
 
 - 2 casos de uso
 - Implementación por equipos
@@ -72,7 +70,7 @@ Ya hablaremos de ello...
 
 ## Resumen
 
-...pero la idea rápida es que te tocará escribir, redactar.
+...pero la idea rápida es que te tocará redactar.
 
 
 # Sesiones
@@ -104,7 +102,7 @@ https:://leonardohansa.com
 
 ## Solución presentada
 
-- 30%
+- 35%
 - Misma nota para cada miembro
 - Se valorará:
   - calidad técnica
@@ -112,16 +110,16 @@ https:://leonardohansa.com
 
 ## Exposición
 
-- 30%
+- 35%
 - Individual
 - Se valorará:
-    - claridad, 
+    - claridad
     - storytelling
     - defensa frente a las preguntas
 
 ## Tribunal (pregunta a otro equipo)
 
-- 20%
+- 10%
 - Individual
 - Se valorará: 
     - La pertinencia
@@ -173,6 +171,16 @@ plt.show()
 4. Clustering jerárquico para agrupar las métricas
 5. Análisis de los clusters y cálculo de los centroides
 
+## Repito: el objetivo del caso es unificar métricas
+
+O sea, calcular nuevas métricas que sean combinaciones de las existentes (e.g., en lugar de 12 métricas habrá solo 3, pero tendrán más o menos la misma información)
+
+## Nota
+
+- Muchas de las decisiones serán subjetivas. No hay una única solución correcta
+- Ten en cuenta que tendrás que presentar y defender tus decisiones
+- Sí, puedes usar IA
+
 ## 1. Paso de diario a semanal
 
 **Tarea.** Pasa el dato diario a semanal. 
@@ -199,6 +207,8 @@ $$
 en la fecha $i$.
 
 ## ¿Cómo se agrega a semanal?
+
+Vía libre. ¿Qué se te ocurre?
 
 
 ## 2. Suavizado de las series temporales
@@ -390,7 +400,7 @@ Paradójicamente, el centroide no tiene por qué ser un punto real. Es solo una 
 <!-- TODO. visualzación jerárquico -->
 
 
-# Tarea
+# A trabajar
 
 ## Metodología
 
@@ -398,12 +408,6 @@ Paradójicamente, el centroide no tiene por qué ser un punto real. Es solo una 
 - Trabajáis el caso
 - Presentación de 20 minutos:
     + **12 de junio** 
-
-## Evaluación
-
-- Solución presentada: 40% (igual para cada miembro del equipo)
-- Exposición: 40% (individual)
-- Tribunal: 20% (individual)
 
 ## Comentarios
 
