@@ -3,3 +3,6 @@ numpy==2.3.4
 openpyxl==3.1.5
 matplotlib==3.10.9
 scipy==1.17.1
+jupyter
+nbclient
+ipykernel

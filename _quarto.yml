@@ -1,5 +1,7 @@
 project:
-  type: default
+  title: "ceu-2605"
+  type: "website"
+  output-dir: docs
 
 format:
   revealjs:
@@ -10,3 +12,6 @@ execute:
   echo: false
   warning: false
   message: false
+
+website: 
+  favicon: "img/favicon.png"

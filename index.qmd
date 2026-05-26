@@ -1,18 +1,24 @@
 ---
-title: "2 casos de uso"
-subtitle: "Máster en análisis y divulgación de datos"
+title: "La IA te hará el trabajo, pero tú tendrás que defenderlo"
+subtitle: "2 casos de uso no tanto para hacer, sino para defender"
+affiliation: "Máster en Análisis y divulgación de datos"
 author: "Leonardo Hansa"
 date: "2026-06-01"
+date-format: "D/M/YYYY"
 lang: es
 execute:
     echo: false
     eval: true
     warning: false
     message: false
-format:
-    revealjs:
-        slide-number: c/t
-        incremental: false
+format: 
+  revealjs: 
+    theme: 
+      - simple
+      - custom.scss
+    logo: img/favicon.png
+    transition: slide
+    incremental: false
 ---
 
 ```{python}
@@ -26,23 +32,79 @@ import numpy as np
 
 # Bienvenida
 
+## ¿Cuál es la situación actual en análisis de datos?
+
+## La IA está haciendo cada vez más y más trabajo
+
+## Y quién es el responsable de ese trabajo
+
+## Tú
+
+![](img/julio-iglesias.jpg){fig-align="center"}
+
+## La consecuencia de eso es que te tocará:
+
+- Presentar tu trabajo
+- Explicar tu trabajo
+- Defender tu trabajo
+
+# En esta asignatura practicarás eso
+
 ## Asignatura
 
 - 2 casos de uso
 - Implementación por equipos
 - Presentación de casos
 
-# Evaluación 
+# Evaluación del caso 1
 
-## Elementos
+## Resumen
 
-- Solución presentada: 40% (igual para cada miembro del equipo)
-- Exposición: 40% (individual)
+- Solución presentada: 30% (igual para cada miembro del equipo)
+- Exposición: 30% (individual)
 - Tribunal: 20% (individual)
+
+# Evaluación del caso 2
+
+## Resumen
+
+Ya hablaremos de ello...
+
+## Resumen
+
+...pero la idea rápida es que te tocará escribir, redactar.
+
+
+# Sesiones
+
+## Cómo quiero repartir las sesiones
+
+- 5 y 6 de junio:
+    + presentación del caso 1
+    + trabajo en equipo del caso 1
+- 12 de junio:
+    + exposiciones del caso 1
+    + presentación del caso 2
+- 10 de julio: 
+    + trabajo en el caso 2
+    + entrega en el caso 2
+
+
+
+## Material extra
+
+<!-- pantallazo leonardohansa.com -->
+
+https:://leonardohansa.com
+
+
+# Caso 1. Agregación de métricas
+
+## Empiezo con detalles de la evaluación
 
 ## Solución presentada
 
-- 40%
+- 30%
 - Misma nota para cada miembro
 - Se valorará:
   - calidad técnica
@@ -50,32 +112,12 @@ import numpy as np
 
 ## Exposición
 
-- 40%
+- 30%
 - Individual
 - Se valorará:
     - claridad, 
     - storytelling
     - defensa frente a las preguntas
-
-# Sesiones
-
-## Primera sesión y quizá segunda
-
-- Presentación de los casos
-
-## Sesiones centrales
-
-- Trabajo en equipo para resolver los casos
-
-## Última sesión
-
-- Exposición de los casos
-
-## Material extra
-
-<!-- pantallazo leonardohansa.com -->
-
-https:://leonardohansa.com
 
 ## Tribunal (pregunta a otro equipo)
 
@@ -85,41 +127,6 @@ https:://leonardohansa.com
     - La pertinencia
     - La originalidad
     - La capacidad de generar debate
-
-
-# Caso 1: monitorización de datos
-
-## Problema de partida
-
-<!-- TODO: pantallazo de tabla de datos -->
-
-## Problema de partida
-
-- Datos para un análisis a fecha de hoy
-- Tiempo después llegan nuevos datos para actualizar el análisis
-
-**Objetivo.** Validar que los nuevos datos son coherentes con los anteriores.
-
-## Tarea
-
-Implementación de reglas para validar si los nuevos datos se parecen a los anteriores e identificar rasgos en los que no.
-
-Dos partes: 
-- Listado de reglas (ideas abstractas)
-- Implementación con código
-
-## Tarea
-
-- El equipo construirá un código para validar los nuevos datos. 
-- Este código indicará las diferencias significativas de los nuevos datos. 
-    - Generando un fichero, mostrando por pantalla, lo que se decida.
-
-## Comentarios
-
-- El conjunto de nuevos datos solo lo tendréis disponible al final
-- El objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?
-
-# Caso. Agregación de métricas
 
 ## Problema de partida
 
@@ -294,6 +301,7 @@ plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
 ## 5. Análisis de los clusters y cálculo de los centroides
 
 **Tarea.** 
+
 - Calcula el centroide. Cada centroide es la agregación de las métricas que representa
 - Analiza los centroides. ¿Qué representan? ¿Qué información aportan?
 
@@ -344,6 +352,33 @@ plt.tight_layout()
 plt.show()
 ```
 
+## El centroide de un cluster es el punto medio, el elemento más representativo
+
+```{python}
+fig, ax = plt.subplots(figsize=(6, 5))
+
+for k, color in enumerate(colors):
+    mask = labels == k
+    ax.scatter(points[mask, 0], points[mask, 1], color=color, alpha=0.7, s=30, label=f"Cluster {k + 1}")
+    centroid = points[mask].mean(axis=0)
+    ax.scatter(centroid[0], centroid[1], color=color, marker="X", s=250, edgecolors="black", linewidths=1.5, zorder=5)
+
+ax.set_title("Centroides de cada cluster")
+ax.legend()
+ax.axis("off")
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1.5)
+    spine.set_edgecolor("#cccccc")
+
+plt.tight_layout()
+plt.show()
+```
+
+Paradójicamente, el centroide no tiene por qué ser un punto real. Es solo una media
+
+
+
 ## Hay dos filosofías de clustering: jerárquico y particional
 
 ## Clustering no jerárquico: k-means
@@ -362,7 +397,7 @@ plt.show()
 - Parejas
 - Trabajáis el caso
 - Presentación de 20 minutos:
-    + **12 de junio** ó **10 de julio**
+    + **12 de junio** 
 
 ## Evaluación
 
@@ -385,3 +420,38 @@ plt.show()
 5. Análisis de los clusters y cálculo de los centroides
 6. Preparación de la presentación para explicar el proceso y los resultados obtenidos
 7. Como miembro del tribunal, preparación de pregunta
+
+
+
+# Caso 2: monitorización de datos
+## Problema de partida
+
+<!-- TODO: pantallazo de tabla de datos -->
+
+## Problema de partida
+
+- Datos para un análisis a fecha de hoy
+- Tiempo después llegan nuevos datos para actualizar el análisis
+
+**Objetivo.** Validar que los nuevos datos son coherentes con los anteriores.
+
+## Tarea
+
+Implementación de reglas para validar si los nuevos datos se parecen a los anteriores e identificar rasgos en los que no.
+
+Dos partes: 
+- Listado de reglas (ideas abstractas)
+- Implementación con código
+
+## Tarea
+
+- El equipo construirá un código para validar los nuevos datos. 
+- Este código indicará las diferencias significativas de los nuevos datos. 
+    - Generando un fichero, mostrando por pantalla, lo que se decida.
+
+## Comentarios
+
+- El conjunto de nuevos datos solo lo tendréis disponible al final
+- El objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?
+
+# leonardohansa.com
