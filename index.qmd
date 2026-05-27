@@ -54,7 +54,7 @@ import numpy as np
 - Implementación por equipos
 - Presentación de casos
 
-# Evaluación del caso 1
+# Evaluación el caso 1
 
 ## Resumen
 
@@ -91,10 +91,7 @@ Ya hablaremos de ello...
 
 ## Material extra
 
-<!-- pantallazo leonardohansa.com -->
-
-https:://leonardohansa.com
-
+![https:://leonardohansa.com](img/leonardohansa.png){fig-align="center"}
 
 # Caso 1. Agregación de métricas
 
@@ -308,12 +305,6 @@ linkage_matrix = hierarchical_linkage(metrics_df)
 plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
 ```
 
-## 5. Análisis de los clusters y cálculo de los centroides
-
-**Tarea.** 
-
-- Calcula el centroide. Cada centroide es la agregación de las métricas que representa
-- Analiza los centroides. ¿Qué representan? ¿Qué información aportan?
 
 
 # Teoría
@@ -393,11 +384,37 @@ Paradójicamente, el centroide no tiene por qué ser un punto real. Es solo una 
 
 ## Clustering no jerárquico: k-means
 
-<!-- TODO: link a página interactiva kmeans -->
+:::
+::: {.columns}
 
-## Clustering jerárquico: dendrograma
+::: {.column}
 
-<!-- TODO. visualzación jerárquico -->
+![](img/kmeans.png){fig-align="center"}
+
+:::
+
+::: {.column}
+
+`https://www.interactive-ml.com/k-means.html`
+
+:::
+
+:::
+
+
+## Clustering jerárquico: dendograma
+```{python}
+linkage_matrix = hierarchical_linkage(metrics_df)
+plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
+```
+
+
+## 5. Análisis de los clusters y cálculo de los centroides
+
+**Tarea.** 
+
+- Calcula el centroide. Cada centroide es la agregación de las métricas que representa
+- Analiza los centroides. ¿Qué representan? ¿Qué información aportan?
 
 
 # A trabajar
@@ -428,34 +445,36 @@ Paradójicamente, el centroide no tiene por qué ser un punto real. Es solo una 
 
 
 # Caso 2: monitorización de datos
+
 ## Problema de partida
 
-<!-- TODO: pantallazo de tabla de datos -->
+![](img/media-dataset.png){fig-align="center"}
 
 ## Problema de partida
 
 - Datos para un análisis a fecha de hoy
 - Tiempo después llegan nuevos datos para actualizar el análisis
 
-**Objetivo.** Validar que los nuevos datos son coherentes con los anteriores.
+**¿Cómo validar que los nuevos datos son coherentes con los anteriores?**
 
 ## Tarea
 
-Implementación de reglas para validar si los nuevos datos se parecen a los anteriores e identificar rasgos en los que no.
+Tu jefe te ha pedido que automatices la validación de los nuevos datos. 
 
-Dos partes: 
-- Listado de reglas (ideas abstractas)
-- Implementación con código
+**Explora** los datos y **piensa** qué características de los datos es importante supervisar para validar que los nuevos datos se parecen a los anteriores.
+
+**Redacta un correo electrónico** para que valide las reglas que se te han ocurrido.
 
 ## Tarea
 
-- El equipo construirá un código para validar los nuevos datos. 
-- Este código indicará las diferencias significativas de los nuevos datos. 
-    - Generando un fichero, mostrando por pantalla, lo que se decida.
+- Explora
+- Piensa
+- Redacta **en papel**
 
-## Comentarios
+## La evaluación individual (20%) pero podéis pensar por equipos
 
-- El conjunto de nuevos datos solo lo tendréis disponible al final
-- El objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?
+- Cada persona redactará su propio correo electrónico
+- Habrá ideas comunes pero tendrán que ser correos diferentes
+- Cuenta el 20% del módulo
 
 # leonardohansa.com
