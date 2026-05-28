@@ -66,9 +66,13 @@ from src.metrics_recoding import (
 
 ## Resumen
 
-- Solución presentada: 30% (igual para cada miembro del equipo)
-- Exposición: 30% (individual)
-- Tribunal: 20% (individual)
+::: {.incremental}
+
+- Solución presentada
+- Exposición
+- Tribunal
+
+:::
 
 # Evaluación del caso 2
 
@@ -97,9 +101,9 @@ Ya hablaremos de ello...
 
 
 
-## Material extra
+## Material guía
 
-![https:://leonardohansa.com](img/leonardohansa.png){fig-align="center"}
+![https://leonardohansa.com](img/leonardohansa.png){fig-align="center"}
 
 # Caso 1. Agregación de métricas
 
@@ -178,13 +182,19 @@ plt.show()
 
 ## Repito: el objetivo del caso es unificar métricas
 
-O sea, calcular nuevas métricas que sean combinaciones de las existentes (e.g., en lugar de 12 métricas habrá solo 3, pero tendrán más o menos la misma información)
+O sea, calcular nuevas métricas que sean combinaciones de las existentes. 
+
+Por ejemplo, en lugar de 12 métricas habrá solo 3, pero tendrán más o menos la misma información.
 
 ## Nota
+
+::: {.incremental}
 
 - Muchas de las decisiones serán subjetivas. No hay una única solución correcta
 - Ten en cuenta que tendrás que presentar y defender tus decisiones
 - Sí, puedes usar IA
+
+:::
 
 ## 1. Paso de diario a semanal
 
@@ -416,9 +426,13 @@ plt.show()
 
 ## Comentarios
 
+::: {.incremental}
+
 - El tribunal será otra pareja
 - Cada miembro hará una pregunta
 - Se valorará (muy) positivamente que la pregunta genere debates
+
+:::
 
 ## Resumen de la tarea
 
@@ -447,11 +461,13 @@ plt.show()
 
 ## Tarea
 
-Tu jefe te ha pedido que automatices la validación de los nuevos datos. 
+::: {.incremental}
 
-**Explora** los datos y **piensa** qué características de los datos es importante supervisar para validar que los nuevos datos se parecen a los anteriores.
+- Tu jefe te ha pedido que automatices la validación de los nuevos datos. 
+- **Explora** los datos y **piensa** qué características de los datos es importante supervisar para validar que los nuevos datos se parecen a los anteriores.
+- **Redacta un correo electrónico** para que valide las reglas que se te han ocurrido.
 
-**Redacta un correo electrónico** para que valide las reglas que se te han ocurrido.
+:::
 
 ## Tarea
 
@@ -461,10 +477,14 @@ Tu jefe te ha pedido que automatices la validación de los nuevos datos.
 - Recuerda que puedes preguntarme cualquier duda
 - Recuerda que no hay una única solución correcta
 
-## La evaluación individual (20%) pero podéis pensar por equipos
+## La evaluación es individual (20%) pero podéis pensar por equipos
+
+::: {.incremental}
 
 - Cada persona redactará su propio correo electrónico
 - Habrá ideas comunes pero tendrán que ser correos diferentes
 - Cuenta el 20% del módulo
+
+::: 
 
 # leonardohansa.com

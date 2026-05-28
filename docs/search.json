@@ -39,7 +39,7 @@
     "href": "index.html#resumen",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Resumen",
-    "text": "Resumen\n\nSolución presentada: 30% (igual para cada miembro del equipo)\nExposición: 30% (individual)\nTribunal: 20% (individual)"
+    "text": "Resumen\n\nSolución presentada\nExposición\nTribunal"
   },
   {
     "objectID": "index.html#resumen-1",
@@ -63,11 +63,11 @@
     "text": "Cómo quiero repartir las sesiones\n\n5 y 6 de junio:\n\npresentación del caso 1\ntrabajo en equipo del caso 1\n\n12 de junio:\n\nexposiciones del caso 1\npresentación del caso 2\n\n10 de julio:\n\ntrabajo en el caso 2\nentrega en el caso 2"
   },
   {
-    "objectID": "index.html#material-extra",
-    "href": "index.html#material-extra",
+    "objectID": "index.html#material-guía",
+    "href": "index.html#material-guía",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
-    "section": "Material extra",
-    "text": "Material extra\n\nhttps:://leonardohansa.com"
+    "section": "Material guía",
+    "text": "Material guía\n\nhttps://leonardohansa.com"
   },
   {
     "objectID": "index.html#empiezo-con-detalles-de-la-evaluación",
@@ -123,7 +123,7 @@
     "href": "index.html#repito-el-objetivo-del-caso-es-unificar-métricas",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Repito: el objetivo del caso es unificar métricas",
-    "text": "Repito: el objetivo del caso es unificar métricas\nO sea, calcular nuevas métricas que sean combinaciones de las existentes (e.g., en lugar de 12 métricas habrá solo 3, pero tendrán más o menos la misma información)"
+    "text": "Repito: el objetivo del caso es unificar métricas\nO sea, calcular nuevas métricas que sean combinaciones de las existentes.\nPor ejemplo, en lugar de 12 métricas habrá solo 3, pero tendrán más o menos la misma información."
   },
   {
     "objectID": "index.html#nota",
@@ -277,7 +277,7 @@
     "href": "index.html#tarea",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Tarea",
-    "text": "Tarea\nTu jefe te ha pedido que automatices la validación de los nuevos datos.\nExplora los datos y piensa qué características de los datos es importante supervisar para validar que los nuevos datos se parecen a los anteriores.\nRedacta un correo electrónico para que valide las reglas que se te han ocurrido."
+    "text": "Tarea\n\nTu jefe te ha pedido que automatices la validación de los nuevos datos.\nExplora los datos y piensa qué características de los datos es importante supervisar para validar que los nuevos datos se parecen a los anteriores.\nRedacta un correo electrónico para que valide las reglas que se te han ocurrido."
   },
   {
     "objectID": "index.html#tarea-1",
@@ -287,10 +287,10 @@
     "text": "Tarea\n\nExplora\nPiensa\nRedacta en papel\nRecuerda que puedes preguntarme cualquier duda\nRecuerda que no hay una única solución correcta"
   },
   {
-    "objectID": "index.html#la-evaluación-individual-20-pero-podéis-pensar-por-equipos",
-    "href": "index.html#la-evaluación-individual-20-pero-podéis-pensar-por-equipos",
+    "objectID": "index.html#la-evaluación-es-individual-20-pero-podéis-pensar-por-equipos",
+    "href": "index.html#la-evaluación-es-individual-20-pero-podéis-pensar-por-equipos",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
-    "section": "La evaluación individual (20%) pero podéis pensar por equipos",
-    "text": "La evaluación individual (20%) pero podéis pensar por equipos\n\nCada persona redactará su propio correo electrónico\nHabrá ideas comunes pero tendrán que ser correos diferentes\nCuenta el 20% del módulo"
+    "section": "La evaluación es individual (20%) pero podéis pensar por equipos",
+    "text": "La evaluación es individual (20%) pero podéis pensar por equipos\n\nCada persona redactará su propio correo electrónico\nHabrá ideas comunes pero tendrán que ser correos diferentes\nCuenta el 20% del módulo"
   }
 ]
