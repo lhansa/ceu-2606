@@ -196,13 +196,6 @@
     "text": "4. Clustering jerárquico para agrupar las métricas\nTarea.\n\nImplementa los clusters\nDecide con cuántos te quedas y explóralos"
   },
   {
-    "objectID": "index.html#análisis-de-los-clusters-y-cálculo-de-los-centroides",
-    "href": "index.html#análisis-de-los-clusters-y-cálculo-de-los-centroides",
-    "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
-    "section": "5. Análisis de los clusters y cálculo de los centroides",
-    "text": "5. Análisis de los clusters y cálculo de los centroides\nTarea.\n\nCalcula el centroide. Cada centroide es la agregación de las métricas que representa\nAnaliza los centroides. ¿Qué representan? ¿Qué información aportan?"
-  },
-  {
     "objectID": "index.html#idea-general-de-clustering",
     "href": "index.html#idea-general-de-clustering",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
@@ -228,21 +221,28 @@
     "href": "index.html#clustering-no-jerárquico-k-means",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Clustering no jerárquico: k-means",
-    "text": "Clustering no jerárquico: k-means"
+    "text": "Clustering no jerárquico: k-means\n\n\n\n\n\n\n\n\nhttps://www.interactive-ml.com/k-means.html"
   },
   {
-    "objectID": "index.html#clustering-jerárquico-dendrograma",
-    "href": "index.html#clustering-jerárquico-dendrograma",
+    "objectID": "index.html#clustering-jerárquico-dendograma",
+    "href": "index.html#clustering-jerárquico-dendograma",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
-    "section": "Clustering jerárquico: dendrograma",
-    "text": "Clustering jerárquico: dendrograma"
+    "section": "Clustering jerárquico: dendograma",
+    "text": "Clustering jerárquico: dendograma"
+  },
+  {
+    "objectID": "index.html#análisis-de-los-clusters-y-cálculo-de-los-centroides",
+    "href": "index.html#análisis-de-los-clusters-y-cálculo-de-los-centroides",
+    "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
+    "section": "5. Análisis de los clusters y cálculo de los centroides",
+    "text": "5. Análisis de los clusters y cálculo de los centroides\nTarea.\n\nCalcula el centroide. Cada centroide es la agregación de las métricas que representa\nAnaliza los centroides. ¿Qué representan? ¿Qué información aportan?"
   },
   {
     "objectID": "index.html#metodología",
     "href": "index.html#metodología",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Metodología",
-    "text": "Metodología\n\nParejas\nTrabajáis el caso\nPresentación de 20 minutos:\n\n12 de junio"
+    "text": "Metodología\n\nParejas\nTrabajáis el caso\nPresentación de 20 minutos:\n\n12 de junio\n\nPuedes preguntarme cualquier duda durante el proceso\nRecuerda que no hay una única solución correcta"
   },
   {
     "objectID": "index.html#comentarios",
@@ -270,27 +270,27 @@
     "href": "index.html#problema-de-partida-2",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Problema de partida",
-    "text": "Problema de partida\n\nDatos para un análisis a fecha de hoy\nTiempo después llegan nuevos datos para actualizar el análisis\n\nObjetivo. Validar que los nuevos datos son coherentes con los anteriores."
+    "text": "Problema de partida\n\nDatos para un análisis a fecha de hoy\nTiempo después llegan nuevos datos para actualizar el análisis\n\n¿Cómo validar que los nuevos datos son coherentes con los anteriores?"
   },
   {
     "objectID": "index.html#tarea",
     "href": "index.html#tarea",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Tarea",
-    "text": "Tarea\nImplementación de reglas para validar si los nuevos datos se parecen a los anteriores e identificar rasgos en los que no.\nDos partes: - Listado de reglas (ideas abstractas) - Implementación con código"
+    "text": "Tarea\nTu jefe te ha pedido que automatices la validación de los nuevos datos.\nExplora los datos y piensa qué características de los datos es importante supervisar para validar que los nuevos datos se parecen a los anteriores.\nRedacta un correo electrónico para que valide las reglas que se te han ocurrido."
   },
   {
     "objectID": "index.html#tarea-1",
     "href": "index.html#tarea-1",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Tarea",
-    "text": "Tarea\n\nEl equipo construirá un código para validar los nuevos datos.\nEste código indicará las diferencias significativas de los nuevos datos.\n\nGenerando un fichero, mostrando por pantalla, lo que se decida."
+    "text": "Tarea\n\nExplora\nPiensa\nRedacta en papel\nRecuerda que puedes preguntarme cualquier duda\nRecuerda que no hay una única solución correcta"
   },
   {
-    "objectID": "index.html#comentarios-1",
-    "href": "index.html#comentarios-1",
+    "objectID": "index.html#la-evaluación-individual-20-pero-podéis-pensar-por-equipos",
+    "href": "index.html#la-evaluación-individual-20-pero-podéis-pensar-por-equipos",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
-    "section": "Comentarios",
-    "text": "Comentarios\n\nEl conjunto de nuevos datos solo lo tendréis disponible al final\nEl objetivo es pensar. Mucho. ¿Qué características tienen estos datos que sea importante supervisar?"
+    "section": "La evaluación individual (20%) pero podéis pensar por equipos",
+    "text": "La evaluación individual (20%) pero podéis pensar por equipos\n\nCada persona redactará su propio correo electrónico\nHabrá ideas comunes pero tendrán que ser correos diferentes\nCuenta el 20% del módulo"
   }
 ]

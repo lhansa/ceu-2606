@@ -23,7 +23,7 @@ def plot_dendrogram(
 ) -> tuple[Figure, Axes]:
     """Plot a dendrogram for clustered metrics."""
     fig, ax = plt.subplots(figsize=(10, 5))
-    dendrogram(linkage_matrix, labels=labels, ax=ax)
+    dendrogram(linkage_matrix, labels=labels, ax=ax, orientation="left")
     ax.set_title("Metrics dendrogram")
     ax.set_xlabel("Metric")
     ax.set_ylabel("Distance")

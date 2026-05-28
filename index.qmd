@@ -28,6 +28,14 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+
+from scipy.signal import savgol_filter
+
+from src.metrics_recoding import (
+    correlation_matrix,
+    hierarchical_linkage,
+    plot_dendrogram,
+)
 ```
 
 # ¿Cuál es la situación actual en análisis de datos?
@@ -211,7 +219,7 @@ Vía libre. ¿Qué se te ocurre?
 ## 2. Suavizado de las series temporales
 
 ```{python}
-from scipy.signal import savgol_filter
+
 
 weekly_file = Path("data/raw/YouGov Combined Jan 2015 - Mar 2020.xlsx")
 weekly_df = pd.read_excel(weekly_file, sheet_name="YouGov Weekly")
@@ -285,35 +293,11 @@ plt.show()
 - Implementa los clusters
 - Decide con cuántos te quedas y explóralos
 
-```{python}
-#| eval: false
-from pathlib import Path
-
-import pandas as pd
-
-from src.metrics_recoding import (
-    correlation_matrix,
-    hierarchical_linkage,
-    plot_dendrogram,
-)
-
-metrics_file = Path("data/raw/metrics_data.xlsx")
-metrics_df = pd.read_excel(metrics_file)
-
-corr = correlation_matrix(metrics_df)
-linkage_matrix = hierarchical_linkage(metrics_df)
-plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
-```
-
-
-
 # Teoría
 
 ## Idea general de clustering
 
 ```{python}
-
-
 rng = np.random.default_rng(7)
 centers = [(-3, -3), (0, 3), (4, -1)]
 n = 80
@@ -356,6 +340,7 @@ plt.show()
 ## El centroide de un cluster es el punto medio, el elemento más representativo
 
 ```{python}
+#| fig.align: "center"
 fig, ax = plt.subplots(figsize=(6, 5))
 
 for k, color in enumerate(colors):
@@ -384,30 +369,31 @@ Paradójicamente, el centroide no tiene por qué ser un punto real. Es solo una 
 
 ## Clustering no jerárquico: k-means
 
-:::
-::: {.columns}
+:::: {.columns}
 
 ::: {.column}
-
 ![](img/kmeans.png){fig-align="center"}
-
 :::
 
 ::: {.column}
-
 `https://www.interactive-ml.com/k-means.html`
-
 :::
 
-:::
+::::
 
 
 ## Clustering jerárquico: dendograma
 ```{python}
-linkage_matrix = hierarchical_linkage(metrics_df)
-plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
+from scipy.cluster.hierarchy import dendrogram
+corr_df = correlation_matrix(weekly_df.drop(columns=['6 Weeks ending']))
+linkage_matrix = hierarchical_linkage(corr_df.iloc[0:10, 0:10])
+# plot_dendrogram(linkage_matrix, labels=corr_df.iloc[:,0:10].columns.tolist())
+fig, ax = plt.subplots(figsize=(8, 8))
+dendrogram(linkage_matrix, labels=corr_df.iloc[:,0:10].columns.tolist(), ax=ax, orientation='left')
+plt.show()
 ```
 
+# Seguimos con el caso 1...
 
 ## 5. Análisis de los clusters y cálculo de los centroides
 
@@ -425,6 +411,8 @@ plot_dendrogram(linkage_matrix, labels=metrics_df.columns.tolist())
 - Trabajáis el caso
 - Presentación de 20 minutos:
     + **12 de junio** 
+- Puedes preguntarme cualquier duda durante el proceso
+- Recuerda que no hay una única solución correcta
 
 ## Comentarios
 
@@ -470,6 +458,8 @@ Tu jefe te ha pedido que automatices la validación de los nuevos datos.
 - Explora
 - Piensa
 - Redacta **en papel**
+- Recuerda que puedes preguntarme cualquier duda
+- Recuerda que no hay una única solución correcta
 
 ## La evaluación individual (20%) pero podéis pensar por equipos
 
