@@ -144,7 +144,7 @@
     "href": "index.html#contexto.-cómo-se-calculan-las-métricas",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "Contexto. Cómo se calculan las métricas",
-    "text": "Contexto. Cómo se calculan las métricas\n\n\n\n\n\n\n\n\n\n\nFecha\nCalidad\nCalidad positiva\nCalidad negativa\nCalidad volumen\n\n\n\n\n04/01/2016\n-13.23\n18.43\n91.50\n552.46\n\n\n05/01/2016\n-13.02\n17.54\n89.67\n554.07\n\n\n06/01/2016\n-14.85\n16.54\n100.22\n563.66\n\n\n07/01/2016\n-14.57\n17.97\n99.48\n559.62\n\n\n08/01/2016\n-15.15\n21.26\n109.15\n580.06\n\n\n09/01/2016\n-17.35\n18.94\n121.47\n590.93\n\n\n10/01/2016\n-18.18\n16.04\n123.78\n592.57"
+    "text": "Contexto. Cómo se calculan las métricas\n\n\n\n\n\n\n\n\n\n\nFecha\nCalidad\nCalidad positiva\nCalidad negativa\nCalidad volumen\n\n\n\n\n04/01/2016\n-13.23\n18.43\n91.50\n552.46\n\n\n05/01/2016\n-13.02\n17.54\n89.67\n554.07\n\n\n06/01/2016\n-14.85\n16.54\n100.22\n563.66\n\n\n07/01/2016\n-14.57\n17.97\n99.48\n559.62\n\n\n08/01/2016\n-15.15\n21.26\n109.15\n580.06\n\n\n09/01/2016\n-17.35\n18.94\n121.47\n590.93\n\n\n…\n…\n…\n…\n…"
   },
   {
     "objectID": "index.html#contexto.-cómo-se-calculan-las-métricas-1",
@@ -179,7 +179,7 @@
     "href": "index.html#cálculo-de-la-correlación-entre-las-métricas",
     "title": "La IA hará tu trabajo, pero tú tendrás que defenderlo",
     "section": "3. Cálculo de la correlación entre las métricas",
-    "text": "3. Cálculo de la correlación entre las métricas\n\n\n\n\nBuzz\nQuality\nImpression\nValue\n\n\n\n\nBuzz\n1.00\n0.73\n0.85\n-0.12\n\n\nQuality\n0.73\n1.00\n0.61\n0.34\n\n\nImpression\n0.85\n0.61\n1.00\n-0.08\n\n\nValue\n-0.12\n0.34\n-0.08\n1.00"
+    "text": "3. Cálculo de la correlación entre las métricas\n\n\n\n\nBuzz\nQuality\nImpression\nValue\n…\n\n\n\n\nBuzz\n1.00\n0.73\n0.85\n-0.12\n…\n\n\nQuality\n0.73\n1.00\n0.61\n0.34\n…\n\n\nImpression\n0.85\n0.61\n1.00\n-0.08\n…\n\n\nValue\n-0.12\n0.34\n-0.08\n1.00\n…\n\n\n…\n…\n…\n…\n…\n…"
   },
   {
     "objectID": "index.html#cálculo-de-la-correlación-entre-las-métricas-1",

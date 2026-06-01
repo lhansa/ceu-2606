@@ -227,7 +227,7 @@ Por ejemplo, en lugar de 12 métricas habrá solo 3, pero tendrán más o menos 
 | 07/01/2016 | -14.57  | 17.97            | 99.48            | 559.62          |
 | 08/01/2016 | -15.15  | 21.26            | 109.15           | 580.06          |
 | 09/01/2016 | -17.35  | 18.94            | 121.47           | 590.93          |
-| 10/01/2016 | -18.18  | 16.04            | 123.78           | 592.57          |
+|     ...    |   ...   | ...              | ...              | ...             |
 
 
 ## Contexto. Cómo se calculan las métricas
@@ -298,12 +298,13 @@ plt.show()
 
 ## 3. Cálculo de la correlación entre las métricas
 
-|            | Buzz  | Quality | Impression | Value |
-|------------|-------|---------|------------|-------|
-| Buzz       | 1.00  | 0.73    | 0.85       | -0.12 |
-| Quality    | 0.73  | 1.00    | 0.61       | 0.34  |
-| Impression | 0.85  | 0.61    | 1.00       | -0.08 |
-| Value      | -0.12 | 0.34    | -0.08      | 1.00  |
+|            | Buzz  | Quality | Impression | Value | ... |
+|------------|-------|---------|------------|-------|-----|
+| Buzz       | 1.00  | 0.73    | 0.85       | -0.12 | ... |
+| Quality    | 0.73  | 1.00    | 0.61       | 0.34  | ... |
+| Impression | 0.85  | 0.61    | 1.00       | -0.08 | ... |
+| Value      | -0.12 | 0.34    | -0.08      | 1.00  | ... |
+| ...        | ...   | ...     |  ...       | ...   | ... |
 
 
 ## 3. Cálculo de la correlación entre las métricas
