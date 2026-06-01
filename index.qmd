@@ -18,6 +18,7 @@ format:
       - custom.scss
     logo: img/favicon.png
     transition: none
+    slide-number: false
     incremental: false
 ---
 
@@ -103,7 +104,23 @@ Ya hablaremos de ello...
 
 ## Material guía
 
-![https://leonardohansa.com](img/leonardohansa.png){fig-align="center"}
+:::: {.columns}
+
+::: {.column}
+
+![](img/leonardohansa.png)
+
+:::
+
+::: {.column}
+
+![https://leonardohansa.com](img/qr.png)
+
+:::
+
+::::
+
+
 
 # Caso 1. Agregación de métricas
 
