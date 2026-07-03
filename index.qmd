@@ -495,12 +495,11 @@ plt.show()
 - Recuerda que puedes preguntarme cualquier duda
 - Recuerda que no hay una única solución correcta
 
-## La evaluación es individual (20%) pero podéis pensar por equipos
+## La evaluación (20%) es a nivel pareja
 
 ::: {.incremental}
 
-- Cada persona redactará su propio correo electrónico
-- Habrá ideas comunes pero tendrán que ser correos diferentes
+- Cada pareja redactará un correo
 - Cuenta el 20% del módulo
 
 ::: 
