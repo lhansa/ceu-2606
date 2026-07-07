@@ -504,4 +504,24 @@ plt.show()
 
 ::: 
 
+# Recomendaciones finales
+
+## Ideas sueltas
+
+- Todos los datos están mal, pero algunos son útiles. 
+- Los datos brutos tienen mucho ruido. Transfórmalos y tus modelos te lo agradecerán.
+- No busques hacer proyectos de datos. Busca decisiones de negocio que merezca la pena resolver con datos.
+
+## Consejos no solicitados
+
+- Sigue por encima el trabajo de las ~~principales~~ empresas de tu sector. 
+- Fórmate continuamente, no solo en lo más puntero sino también en los temas fundamentales de los que flojees. 
+- Lee. Es la única forma de profundizar.
+
+## Lecturas
+
+- [Carlos Fenollosa](https://arpaeditores.com/products/la-singularidad)
+- [Anabel Forte]() https://www.casadellibro.com/libro-como-sobrevivir-a-la-incertidumbre/9788412506327/13210905?srsltid=AfmBOopRUDgx4WVwYUu4PpBMT425-GmRBg0I8YtjRhbpXnwnmm0MNVlu)
+- [Dale Carnegie](https://es.wikipedia.org/wiki/C%C3%B3mo_ganar_amigos_e_influir_sobre_las_personas)
+
 # leonardohansa.com
